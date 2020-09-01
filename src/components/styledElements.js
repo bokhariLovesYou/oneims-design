@@ -131,6 +131,7 @@ export const LinkButton = styled.button`
   box-shadow: none;
   font-size: 1.2384219rem;
   text-decoration: underline;
+  padding: 0;
   font-size: ${props => (props.Small ? "1rem" : "")};
   @media (min-width: 992px) {
     font-size: 1.5384219rem;
