@@ -1,7 +1,8 @@
 import styled, { css } from "styled-components"
 // Styled Variables
 import { colors } from "./styledVariables"
-
+// Animations
+import { animated } from "react-spring"
 // Mixins
 const HeroImageCard = `
     position: relative;
@@ -62,7 +63,7 @@ export const ContentBox = styled.div`
   max-width: ${props => (props.MW600 ? "600px" : "")};
 `
 
-export const ImageWrapper = styled.div`
+export const ImageWrapper = styled(animated.div)`
   ${props =>
     props.HeroImageCard
       ? css`
@@ -72,6 +73,15 @@ export const ImageWrapper = styled.div`
 `
 
 export const LargeHeading = styled.h1`
+  @media (min-width: 992px) {
+    font-size: ${props => (props.Hero ? "4rem" : "")};
+  }
+  @media (min-width: 1200px) {
+    font-size: ${props => (props.Hero ? "5rem" : "")};
+  }
+`
+
+export const AnimatedLargeHeading = styled(animated.h1)`
   @media (min-width: 992px) {
     font-size: ${props => (props.Hero ? "4rem" : "")};
   }
@@ -95,15 +105,21 @@ export const Small = styled.span`
   margin-bottom: 0;
 `
 
+export const AnimatedSmall = styled(animated.span)`
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0;
+`
+
 export const CardStackWrapper = styled.div`
   position: relative;
-  box-shadow: 2px 5px 27px rgba(0, 0, 0, 0.12);
+  // box-shadow: 2px 5px 27px rgba(0, 0, 0, 0.12);
   max-width: 450px;
   margin-left: auto;
   margin-right: auto;
 `
 
-export const CardStack = styled.div`
+export const CardStack = styled(animated.div)`
   position: absolute;
   top: 0;
   left: 0;
@@ -142,7 +158,26 @@ export const LinkButton = styled.button`
   }
 `
 
-export const LargeSVGOverlay = styled.div`
+export const AnimatedLinkButton = styled(animated.button)`
+  font-weight: 700;
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  font-size: 1.2384219rem;
+  text-decoration: underline;
+  padding: 0;
+  font-size: ${props => (props.Small ? "1rem" : "")};
+  @media (min-width: 992px) {
+    font-size: 1.5384219rem;
+    font-size: ${props => (props.Small ? "1rem" : "")};
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+`
+
+export const LargeSVGOverlay = styled(animated.div)`
   position: absolute;
   top: 0;
   left: 0;
