@@ -4,6 +4,7 @@ exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
   const templates = {
     HomepageTemplate: path.resolve("src/templates/HomepageTemplate.js"),
+    WorkArchiveTemplate: path.resolve("src/templates/WorkArchiveTemplate.js"),
   }
 
   return graphql(`
@@ -32,6 +33,8 @@ exports.createPages = ({ actions, graphql }) => {
         component: (() => {
           if (page.node.frontmatter.template === "HomepageTemplate") {
             return templates.HomepageTemplate
+          } else if (page.node.frontmatter.template === "WorkArchiveTemplate") {
+            return templates.WorkArchiveTemplate
           }
         })(),
       })

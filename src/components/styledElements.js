@@ -32,7 +32,27 @@ const InvertedSVG = `
       @media (min-width: 2500px) {
         bottom: -40vh;
       }
-    
+`
+
+const VisuallyHidden = `
+    position: absolute;
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+`
+
+const HorizontallyScrollableList = `
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`
+
+const HorizontallyScrollableListItem = `
+  flex: 0 0 auto;
 `
 
 export const CoolSpan = styled.span`
@@ -48,7 +68,7 @@ export const Section = styled.section`
   padding-top: ${props => (props.HeroPadding ? "7rem" : "")};
   @media (min-width: 992px) {
     padding: 6rem 0;
-    padding: ${props => (props.Small ? "4rem" : "")};
+    padding: ${props => (props.Small ? "4rem 0" : "")};
     padding-top: ${props => (props.HeroPadding ? "7rem" : "")};
   }
   background-color: ${props => (props.BGOrange ? colors.orange : "")};
@@ -73,11 +93,46 @@ export const ImageWrapper = styled(animated.div)`
 `
 
 export const LargeHeading = styled.h1`
+  text-decoration: ${props => (props.Underlined ? "underline" : "")};
+  font-size: ${props => (props.Archive ? "6rem" : "")};
+  font-weight: ${props => (props.Archive ? "800" : "")};
   @media (min-width: 992px) {
     font-size: ${props => (props.Hero ? "4rem" : "")};
+    font-size: ${props => (props.Archive ? "12rem" : "")};
   }
   @media (min-width: 1200px) {
     font-size: ${props => (props.Hero ? "5rem" : "")};
+  }
+  @media (min-width: 1650px) {
+    font-size: ${props => (props.Archive ? "14rem" : "")};
+  }
+  margin-left: ${props => (props.Traced ? "0" : "")};
+  margin-right: ${props => (props.Traced ? "0" : "")};
+  ${props =>
+    props.VisuallyHidden
+      ? css`
+          ${VisuallyHidden}
+        `
+      : ""}
+`
+
+export const HeadingTrace = styled.span`
+  color: transparent;
+  line-height: 1.2;
+  padding: 0 2rem;
+  display: block;
+  -webkit-text-stroke: 1px ${colors.black};
+  font-weight: ${props => (props.Archive ? "800" : "")};
+  font-size: ${props => (props.Archive ? "6rem" : "")};
+  @media (min-width: 992px) {
+    font-size: ${props => (props.Hero ? "4rem" : "")};
+    font-size: ${props => (props.Archive ? "12rem" : "")};
+  }
+  @media (min-width: 1200px) {
+    font-size: ${props => (props.Hero ? "5rem" : "")};
+  }
+  @media (min-width: 1650px) {
+    font-size: ${props => (props.Archive ? "14rem" : "")};
   }
 `
 
@@ -91,6 +146,7 @@ export const AnimatedLargeHeading = styled(animated.h1)`
 `
 
 export const Heading = styled.h2`
+  text-decoration: ${props => (props.Underlined ? "underline" : "")};
   @media (min-width: 992px) {
     font-size: ${props => (props.Hero ? "4rem" : "")};
   }
@@ -188,11 +244,9 @@ export const LargeSVGOverlay = styled(animated.div)`
 
   @media (min-width: 1800px) {
     width: 105vw;
-    top: -20vh;
   }
   @media (min-width: 2400px) {
     width: 105vw;
-    top: -50vh;
   }
   ${props =>
     props.InvertedSVG
@@ -208,6 +262,7 @@ export const LargeSVGOverlay = styled(animated.div)`
       fill: ${props => (props.Navy ? colors.navy : "")};
       fill: ${props => (props.LightSky ? colors.lightsky : "")};
       fill: ${props => (props.Orange ? colors.orange : "")};
+      fill: ${props => (props.OneIMSBlue ? colors.oneimsblue : "")};
     }
   }
 `
@@ -233,4 +288,25 @@ export const LogoSpan = styled.span`
   &:hover {
     text-decoration: none;
   }
+`
+
+export const List = styled.ul`
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  ${props =>
+    props.HorizontallyScrollableList
+      ? css`
+          ${HorizontallyScrollableList}
+        `
+      : ""}
+`
+
+export const ListItem = styled.li`
+  ${props =>
+    props.HorizontallyScrollableListItem
+      ? css`
+          ${HorizontallyScrollableListItem}
+        `
+      : ""}
 `

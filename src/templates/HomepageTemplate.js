@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React from "react"
 // Gatsby
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
@@ -12,6 +12,9 @@ import { Container, Row, Col } from "react-bootstrap"
 // Animations
 import { useSpring } from "react-spring"
 import * as easings from "d3-ease"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
+// Styled Colors
+import { colors } from "../components/styledVariables"
 // Styled Elements
 import {
   Section,
@@ -32,7 +35,7 @@ const HomepageTemplate = data => {
   const flowerEntry = useSpring({
     config: { duration: 2000, easing: easings.easeCubic },
     transform: "translate3d(0px,0,0) scale(1) rotateX(0deg)",
-    from: { transform: "translate3d(0px,0,0) scale(15) rotateX(0deg)" },
+    from: { transform: "translate3d(-1500px,0px,0) scale(3) rotate(0deg)" },
   })
   const imageEntry = useSpring({
     config: {
@@ -42,7 +45,7 @@ const HomepageTemplate = data => {
       easing: easings.easeCubic,
     },
     transform: "translate3d(0px,0,0) scale(1) rotate(0deg)",
-    from: { transform: "translate3d(2000px,0,0) scale(0.8) rotate(100deg)" },
+    from: { transform: "translate3d(-2000px,0,0) scale(0.8) rotate(100deg)" },
   })
   const cardEntry1 = useSpring({
     config: { duration: 1000, friction: 5, easing: easings.easeCubic },
@@ -115,7 +118,7 @@ const HomepageTemplate = data => {
             fill="currentColor"
             viewBox="0 0 900 950"
           >
-            <path d="M80 0c13 37 22 95 0 168 113-61 544-312 12 159 220-35 677-17 213 93 521 103 511 326 60 196 624 325 339 293-30 63C402 1572-599-249 80 0z"></path>
+            <path d="M272 248C553 9 765-77 590 117c170-78 505-25-100 280 360-35 259 118 14 135 729 89 275 169-28 106 202 133-126 59-258 0-843 1448-414-1727-144-438 57-306 389-608 198 48z"></path>
           </svg>
         </LargeSVGOverlay>
         <Container>
@@ -158,11 +161,16 @@ const HomepageTemplate = data => {
                 )}
                 <ContentBox className="pt-2">
                   {hero.buttonTitle ? (
-                    <Link to={hero.buttonURL}>
+                    <AniLink
+                      paintDrip
+                      to={hero.buttonURL}
+                      duration={colors.aniLinkDuration}
+                      hex={colors.pink}
+                    >
                       <AnimatedLinkButton style={buttonEntry}>
                         {hero.buttonTitle}
                       </AnimatedLinkButton>
-                    </Link>
+                    </AniLink>
                   ) : (
                     ""
                   )}

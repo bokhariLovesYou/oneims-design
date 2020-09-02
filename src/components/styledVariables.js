@@ -6,4 +6,12 @@ export const colors = {
   navy: "#11284f",
   pink: "#ffcacf",
   lightgray: "#eee",
+  oneimsblue: "#32a9eb",
+  oneimsnavy: "#11284F",
+  oneimsred: "#EF3F54",
+  oneimsgreen: "#B5D73C",
+  oneimsyellow: "#F9D30B",
+  oneimsorange: "#F97E0B",
+  oneimspurple: "#393E87",
+  aniLinkDuration: 0.5,
 }

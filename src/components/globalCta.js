@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import { Link } from "gatsby"
 // Boostrap
 import Container from "react-bootstrap/Container"
 import {
@@ -17,23 +16,21 @@ export class GlobalCTA extends Component {
     return (
       <Section BGBlack TextWhite>
         <LargeSVGOverlay InvertedSVG Orange>
-          {" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
             viewBox="0 0 900 950"
           >
-            <path d="M80 0c13 37 22 95 0 168 113-61 544-312 12 159 220-35 677-17 213 93 521 103 511 326 60 196 624 325 339 293-30 63C402 1572-599-249 80 0z"></path>
+            <path d="M248 0C116 118 20 118 36 0c-170-415-192 530-6 940 2 9 14 10 10-3-42-137 17-488 409-404 9 2 11-9 4-11C157 426 69 240 270 0c6-11-1-20-22 0z"></path>
           </svg>
         </LargeSVGOverlay>
         <LargeSVGOverlay InvertedSVG Larger LightSky>
-          {" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
             viewBox="0 0 900 950"
           >
-            <path d="M80 0c13 37 22 95 0 168 113-61 544-312 12 159 220-35 677-17 213 93 521 103 511 326 60 196 624 325 339 293-30 63C402 1572-599-249 80 0z"></path>
+            <path d="M248 0C116 118 20 118 36 0c-170-415-192 530-6 940 2 9 14 10 10-3-42-137 17-488 409-404 9 2 11-9 4-11C157 426 69 240 270 0c6-11-1-20-22 0z"></path>
           </svg>
         </LargeSVGOverlay>
         <Container>

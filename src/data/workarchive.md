@@ -1,15 +1,15 @@
 ---
-path: /
-title: Bringing Emotions to Life by Design
+path: /work
+title: Explore Our Work
 description: Description
-template: HomepageTemplate
+template: WorkArchiveTemplate
 # Page Content
 hero:
   label: Case Studies
   heading: Bringing Emotions to Life by Design.
   buttonTitle: Explore our Work ›
-  buttonURL: /work
-  cardImage: ../images/hero-image-2.png
+  buttonURL: /
+  cardImage: ../images/hero-image.png
 work:
   heading: Latest Work
   buttonTitle: View all ›

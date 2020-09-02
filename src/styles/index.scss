@@ -91,11 +91,18 @@ img {
   @media (min-width: 992px) {
     font-size: 1.5rem;
   }
+  &.larger-title {
+    @media (min-width: 992px) {
+      font-size: 2.5rem;
+    }
+  }
 }
 
 .container {
   @media (min-width: 1350px) {
-    max-width: 1275px;
+    max-width: 1600px;
+    padding-left: 5vw;
+    padding-right: 5vw;
   }
 }
 
@@ -140,4 +147,19 @@ img {
   &:hover {
     color: $oneIMSBlue;
   }
+}
+
+button {
+  &:focus {
+    outline: none;
+  }
+}
+
+.equipped-width {
+  max-width: 50vw;
+}
+
+.tl-edges {
+  max-width: 100%;
+  overflow-x: hidden;
 }

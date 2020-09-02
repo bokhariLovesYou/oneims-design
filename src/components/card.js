@@ -11,7 +11,9 @@ import HeroImage from "../images/hero-image.png"
 const CardWrapper = styled.article``
 const CardContent = styled.div``
 const CardTop = styled.div``
-const CardImageWrapper = styled.div``
+const CardImageWrapper = styled.div`
+  border: ${props => (props.Bordered ? `20px solid ${colors.black}` : "")};
+`
 const CardBottom = styled.div`
   padding-top: 1rem;
 `
@@ -44,9 +46,15 @@ export class Card extends Component {
         <CardWrapper>
           <CardContent>
             <CardTop>
-              <CardImageWrapper>
-                <img src={HeroImage} alt />
-              </CardImageWrapper>
+              {this.props.Bordered ? (
+                <CardImageWrapper Bordered>
+                  <img src={HeroImage} alt />
+                </CardImageWrapper>
+              ) : (
+                <CardImageWrapper>
+                  <img src={HeroImage} alt />
+                </CardImageWrapper>
+              )}
             </CardTop>
             <CardBottom>
               <Link to="/">
@@ -55,7 +63,13 @@ export class Card extends Component {
                 </CardTagWrapper>
               </Link>
               <CardTitleWrapper>
-                <CardTitle className="card-title">Remote Onboarding</CardTitle>
+                <CardTitle
+                  className={`card-title ${
+                    this.props.LargerTitle ? "larger-title" : ""
+                  }`}
+                >
+                  Remote Onboarding
+                </CardTitle>
               </CardTitleWrapper>
               <CardDescriptionWrapper>
                 <CardDescription>

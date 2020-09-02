@@ -6,7 +6,11 @@ import styled from "styled-components"
 // Link
 import { Link } from "gatsby"
 // Styled Elements
-import { LogoWrapper, LogoBox, LogoSpan, ContentBox } from "./styledElements"
+import { LogoWrapper, LogoBox, LogoSpan } from "./styledElements"
+// Animations
+import AniLink from "gatsby-plugin-transition-link/AniLink"
+// Styled Colors
+import { colors } from "../components/styledVariables"
 
 const HeaderWrapper = styled.header`
   padding: 0.75rem 0;
@@ -14,7 +18,7 @@ const HeaderWrapper = styled.header`
   width: 100%;
   z-index: 100;
   top: 0;
-  background-color: #fff;
+  background-color: transparent;
 `
 
 const HamburgerToggler = styled.div``
@@ -50,7 +54,13 @@ export class Header extends Component {
           <HeaderInnerWrapper>
             <Column>
               <LogoWrapper>
-                <Link to="/" className="text-decor-none">
+                <AniLink
+                  paintDrip
+                  to="/"
+                  className="text-decor-none"
+                  duration={colors.aniLinkDuration}
+                  hex={colors.orange}
+                >
                   <LogoBox>
                     <svg
                       width="40"
@@ -69,7 +79,7 @@ export class Header extends Component {
                       OneIMS <b>design.</b>
                     </LogoSpan>
                   </LogoBox>
-                </Link>
+                </AniLink>
               </LogoWrapper>
             </Column>
             <Column className="hide-after-768">
@@ -91,7 +101,15 @@ export class Header extends Component {
             <Column className="show-after-768">
               <Menu>
                 <MenuItem>
-                  <Link to="">Work</Link>
+                  <AniLink
+                    paintDrip
+                    to="/work"
+                    className="text-decor-none"
+                    duration={colors.aniLinkDuration}
+                    hex={colors.pink}
+                  >
+                    Work
+                  </AniLink>
                 </MenuItem>
                 <MenuItem>
                   <Link to="">Philosophy</Link>
