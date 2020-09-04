@@ -100,7 +100,7 @@ img {
 
 .container {
   @media (min-width: 1350px) {
-    max-width: 1600px;
+    max-width: 1800px;
     padding-left: 5vw;
     padding-right: 5vw;
   }
@@ -159,7 +159,38 @@ button {
   max-width: 50vw;
 }
 
-.tl-edges {
-  max-width: 100%;
-  overflow-x: hidden;
+.testing-cards {
+  position: absolute;
+  // width: 100vw;
+  // height: 100vh;
+  width: 100%;
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.test-two {
+  background-color: white;
+  background-size: auto 85%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 45vh;
+  max-width: 300px;
+  height: 85vh;
+  max-height: 570px;
+  cursor: grab;
+  z-index: 999999;
+  border-radius: 10px;
+  box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4),
+    0 10px 10px -10px rgba(50, 50, 73, 0.3);
+}
+
+.non-draggable {
+  pointer-events: none;
+}
+
+.card-image-src {
+  width: 100%;
+  height: 100%;
 }

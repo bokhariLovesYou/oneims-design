@@ -13,5 +13,5 @@ export const colors = {
   oneimsyellow: "#F9D30B",
   oneimsorange: "#F97E0B",
   oneimspurple: "#393E87",
-  aniLinkDuration: 0.5,
+  aniLinkDuration: 0.7,
 }

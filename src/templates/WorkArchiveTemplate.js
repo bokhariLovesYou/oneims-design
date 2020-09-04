@@ -1,7 +1,6 @@
 import React from "react"
 // Gatsby
-import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { graphql } from "gatsby"
 // Components
 import Layout from "../components/layout"
 import Card from "../components/card"
@@ -10,29 +9,19 @@ import SEO from "../components/seo"
 // Boostrap
 import { Container, Row, Col } from "react-bootstrap"
 // Animation
-import TransitionLink from "gatsby-plugin-transition-link"
+// import TransitionLink from "gatsby-plugin-transition-link"
 // Styled Elements
 import {
   Section,
   ContentBox,
-  ImageWrapper,
   LargeHeading,
   HeadingTrace,
-  AnimatedSmall,
-  CardStackWrapper,
-  CardStack,
-  LinkButton,
-  AnimatedLinkButton,
   LargeSVGOverlay,
   Heading,
-  CoolSpan,
-  List,
-  ListItem,
 } from "../components/styledElements"
 
 const HomepageTemplate = data => {
   const { frontmatter } = data.data.pageData
-  const { hero, work } = frontmatter
   return (
     <Layout>
       <SEO title={frontmatter.title} description={frontmatter.description} />

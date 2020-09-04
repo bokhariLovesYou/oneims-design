@@ -13,7 +13,9 @@ const LayoutWrapper = styled.div`
   overflow-x: hidden;
 `
 
-const Main = styled.main``
+const Main = styled.main`
+  padding-top: 64px;
+`
 
 class Layout extends Component {
   render() {

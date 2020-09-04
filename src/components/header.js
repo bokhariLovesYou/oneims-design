@@ -18,7 +18,7 @@ const HeaderWrapper = styled.header`
   width: 100%;
   z-index: 100;
   top: 0;
-  background-color: transparent;
+  background-color: #fff;
 `
 
 const HamburgerToggler = styled.div``

@@ -5,16 +5,15 @@ import { colors } from "./styledVariables"
 import { animated } from "react-spring"
 // Mixins
 const HeroImageCard = `
-    position: relative;
-    z-index: 1;
-    img {
-        width: 100%;
-        object-fit: cover;
-        height: 350px;
-        @media (min-width: 500px) {
-            height: 450px;
-        }
-    }
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+width: 100%;
+height: auto;
+user-select: none;
+position: absolute;
+z-index: 5;
 `
 
 const InvertedSVG = `
@@ -63,6 +62,7 @@ export const CoolSpan = styled.span`
 
 export const Section = styled.section`
   padding: 3rem 0;
+  transition: 0.7s ease;
   overflow: hidden;
   position: relative;
   padding-top: ${props => (props.HeroPadding ? "7rem" : "")};
@@ -81,6 +81,7 @@ export const ContentBox = styled.div`
   max-width: ${props => (props.MW800 ? "800px" : "")};
   max-width: ${props => (props.MW700 ? "700px" : "")};
   max-width: ${props => (props.MW600 ? "600px" : "")};
+  max-width: ${props => (props.MW650 ? "650px" : "")};
 `
 
 export const ImageWrapper = styled(animated.div)`
@@ -168,11 +169,65 @@ export const AnimatedSmall = styled(animated.span)`
 `
 
 export const CardStackWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  // box-shadow: 2px 5px 27px rgba(0, 0, 0, 0.12);
-  max-width: 450px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  height: calc(70vmin + 5rem);
+  user-select: none;
+  @media (min-width: 1500px) {
+    height: 850px;
+  }
+`
+
+export const AnimatedImage = styled(animated.div)`
+  width: 100%;
+  height: 475px;
+  overflow: hidden;
+  background-color: blue
+  box-shadow: 2px 5px 27px rgba(0,0,0,.32);
+  cursor: grab;
+  will-change: transform;
+  user-select: none;
+  touch-action: none;
+  @media (min-width: 768px) {
+    height: 600px;
+    max-width: 600px;
+  }
+  @media (min-width: 992px) {
+    height: 630px;
+    max-width: 100%;
+  }
+  @media (min-width: 1500px) {
+    height: 750px;
+  }
+  @media (min-width: 1800px) {
+    height: 800px;
+  }
+`
+
+export const DraggableCardWrapper = styled(animated.div)`
+  position: absolute;
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+`
+
+export const DraggableCard = styled(animated.div)`
+  background-color: white;
+  background-size: auto 85%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 45vh;
+  max-width: 300px;
+  height: 85vh;
+  max-height: 570px;
+  cursor: grab;
+  border-radius: 10px;
+  box-shadow: 2px 5px 27px rgba(0, 0, 0, 0.12);
 `
 
 export const CardStack = styled(animated.div)`
@@ -183,7 +238,6 @@ export const CardStack = styled(animated.div)`
   bottom: 0;
   width: 100%;
   height: 100%;
-  box-shadow: 2px 5px 27px rgba(0, 0, 0, 0.12);
   transform: ${props => (props.Rotate3Deg ? "rotate(3deg)" : "")};
   transform: ${props => (props.Rotate4Deg ? "rotate(8deg)" : "")};
   transform: ${props => (props.RotateMinus3Deg ? "rotate(-3deg)" : "")};
